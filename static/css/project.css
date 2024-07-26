@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "GrandSlang-Roman";
+  src: url("/static/fonts/GrandSlang-Roman.otf") format("woff2");
+}
+*{
+    color: #ECE7E1;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: #1a1818;
+}
+.container-ab{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 2%;
+    margin-top: 1%;
+    padding: 2%;
+    gap: 20px;
+    position: fixed;
+    top: -100vh;
+    transition: top 2s ease;
+}
+body.loaded .container-ab {
+    top: 0;
+}
+.nav-list-ab {
+  width: 2%;
+  margin: 10px;
+  font-family: "GrandSlang-Roman", sans-serif;
+}
+
+.nav-line-ab {
+  width: 1px;
+  height: 15%;
+  background-color: #ECE7E1;
+  margin: 0 20px;
+}
+
+.nav-list-ab a {
+  text-decoration: none;
+  color: #ECE7E1;
+  transform: rotate(180deg);
+  display: inline-block;
+  writing-mode: vertical-rl;
+}
+
+.nav-list-ab a:hover {
+  text-decoration-line: line-through;
+}
+.ab {
+  width: 50%;
+  position: absolute;
+  left: 44%;
+  top: 23%;
+}
+.ab a{
+  font-family: 'GrandSlang-Roman';
+  font-size: 90px;
+  text-decoration: none;
+}
+.ab a:hover{
+  font-style: italic;
+}
+.ab h4{
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  bottom: 30px;
+}
+.work{
+  width: 20%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 8%;
+  padding-left: 10%;
+}
+@media only screen and (max-width: 720px) {
+.container-ab {
+  width: 10%;
+  margin-top: 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  transition: top 2s ease;
+}
+.loaded{
+  height: 10px;
+}
+.container-ab.loaded .nav-list-ab .nav-line-ab{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+}
+
+.nav-list-ab {
+  margin: 10px 5px;
+  width: 20px;
+}
+
+.nav-line-ab {
+  margin: -5px 15px;
+  width: 1px;
+}
+
+.ab {
+  position: relative;
+  left: 110px;
+  top: -420px;
+  text-align: center;
+}
+
+.ab a {
+  position: relative;
+  top: -15px;
+  left: -45px;
+  font-size: 33px;
+}
+
+.ab h4 {
+  left: -50px;
+  width: 100%;
+  font-size: 9px;
+}
+
+.work {
+  position: absolute;
+  width: 85%;
+  height: 30%;
+  left: 15px;
+  padding: 7%;
+  margin: 2%;
+  top: 0;
+}
+}

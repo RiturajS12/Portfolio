@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "GrandSlang-Roman";
+  src: url("/static/fonts/GrandSlang-Roman.otf") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ece7e1;
+  overflow: hidden;
+}
+
+.container-ab {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 2%;
+  margin-top: 1%;
+  padding: 2%;
+  gap: 20px;
+  position: absolute;
+  top: -100vh;
+  transition: top 2s ease;
+}
+
+body.loaded .container-ab {
+  top: 0;
+}
+
+.nav-list-ab {
+  width: 2%;
+  margin: 10px;
+  font-family: "GrandSlang-Roman", sans-serif;
+}
+
+.nav-line-ab {
+  width: 1px;
+  height: 15%;
+  background-color: #333;
+  margin: 0 20px;
+}
+
+.nav-list-ab a {
+  text-decoration: none;
+  color: #333;
+  transform: rotate(180deg);
+  display: inline-block;
+  writing-mode: vertical-rl;
+}
+
+.nav-list-ab a:hover {
+  text-decoration-line: line-through;
+}
+
+.ab {
+  width: 80%;
+  max-width: 1200px;
+  margin: 5% auto;
+  padding: 20px;
+  background-color: #c2a786;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ab h1 {
+  font-family: "GrandSlang-Roman", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.ab p {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container-ab {
+      width: 10%;
+  }
+  .nav-list-ab {
+      width: 100%;
+      margin: 0;
+  }
+  .nav-line-ab {
+      display: none;
+  }
+  .ab {
+      width: 90%;
+      padding: 10px;
+  }
+  .ab h1 {
+      font-size: 2em;
+  }
+  .ab p {
+      font-size: 1em;
+  }
+}

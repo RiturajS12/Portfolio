@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "GrandSlang-Roman";
+  src: url("/static/fonts/GrandSlang-Roman.otf") format("woff2");
+}
+body {
+    font-family: "GrandSlang-Roman", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ece7e1;
+}
+.container-ab {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 2%;
+    margin-top: 1%;
+    padding: 2%;
+    gap: 20px;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    transition: top 2s ease;
+}
+body.loaded .container-ab {
+    top: 0;
+}
+.nav-list-ab {
+    width: 2%;
+    margin: 10px;
+    font-family: "GrandSlang-Roman", sans-serif;
+}
+.nav-line-ab {
+    width: 1px;
+    height: 15%;
+    background-color: black;
+    margin: 0 20px;
+}
+.nav-list-ab a {
+    text-decoration: none;
+    color:black;
+    transform: rotate(180deg);
+    display: inline-block;
+    writing-mode: vertical-rl;
+}
+.nav-list-ab a:hover {
+    text-decoration-line: line-through;
+}
+.slider {
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+}
+button.prev {
+    left: 10px;
+}
+button.next {
+    right: 10px;
+}
