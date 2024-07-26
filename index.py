@@ -3,9 +3,11 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb+srv://Textovert:Kyundu17@textovert.uzlevw3.mongodb.net/')
-db = client['upflairs'] 
-collection = db['queries']  
+mongodb_uri = 'mongodb+srv://Textovert:Kyundu17@textovert.uzlevw3.mongodb.net/upflairs?retryWrites=true&w=majority'
+
+client = MongoClient(mongodb_uri, serverSelectionTimeoutMS=5000)
+db = client['upflairs']
+collection = db['queries']
 
 @app.route('/')
 def index():
@@ -31,10 +33,10 @@ def contact():
 def submit_review():
     name = request.form['name']
     message = request.form['message']
-    
+
     collection.insert_one({'name': name, 'message': message})
-    
+
     return redirect(url_for('contact'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port='5050',debug=True)
