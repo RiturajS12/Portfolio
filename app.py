@@ -22,3 +22,6 @@ def certificates():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+    
+def handler(request):
+    return app(request)
