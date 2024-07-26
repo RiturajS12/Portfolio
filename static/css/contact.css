@@ -2,7 +2,8 @@
   font-family: "GrandSlang-Roman";
   src: url("/static/fonts/GrandSlang-Roman.otf") format("woff2");
 }
-*{
+
+* {
     color: #ECE7E1;
 }
 
@@ -14,7 +15,8 @@ body {
     background-color: #1a1818;
     overflow: hidden;
 }
-.container-ab{
+
+.container-ab {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -26,14 +28,17 @@ body {
   top: -100vh;
   transition: top 2s ease;
 }
+
 body.loaded .container-ab {
   top: 0;
 }
+
 .nav-list-ab {
   width: 2%;
   margin: 10px;
   font-family: "GrandSlang-Roman", sans-serif;
 }
+
 .nav-line-ab {
   width: 1px;
   height: 15%;
@@ -52,7 +57,8 @@ body.loaded .container-ab {
 .nav-list-ab a:hover {
   text-decoration-line: line-through;
 }
-h1{
+
+h1 {
   width: 20px;
   font-family: 'GrandSlang-Roman';
   position: relative;
@@ -60,85 +66,163 @@ h1{
   left: 200px;
   font-size: 140px;
 }
-p{
+
+p {
   width: 20%;
   font-family:'Courier New', Courier, monospace;
   position: relative;
   top: 100px;
   left: 200px;
 }
-a{
+
+a {
   text-decoration: none;
-}
-.des a{
-  font-style: italic;
-  text-decoration: underline 1px;
-}
-.des a:hover{
-  text-decoration:line-through;
-}
-@media only screen and (max-width: 720px) {
-body{
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-}
-.container-ab {
-  width: 10%;
-  height: 1px;
-  margin-top: 0;
-  padding: 2%;
-  position: relative;
-  top: 0;
-  transition: top 2s ease;
-}
-.loaded{
-width: 100%;
-height: 10px;
-}
-html{
-width: 50%;
-height: 10px;
-}
-body.loaded .container-ab {
-  top: 0;
-}
-.des{
-width: 100%;
-position: relative;
-top: 300px;
-}
-.nav-list-ab {
-  width: 100%;
-  margin: 10px 0;
-}
-
-.nav-line-ab {
-  width: 1px;
-}
-
-h1, p {
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 35%;
-}
-
-h1 {
-  font-size: 40px; 
-}
-
-p {
-  top: 20px;
-  font-size: 13px; 
 }
 
 .des a {
-  font-style: normal;
-  text-decoration: underline;
+  font-style: italic;
+  text-decoration: underline 1px;
 }
 
 .des a:hover {
-  text-decoration:line-through;
+  text-decoration: line-through;
 }
+
+.review-box {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+  left: 12%;
+  bottom: 17em;
+}
+
+.review-box h2 {
+  font-family: 'GrandSlang-Roman';
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.review-box label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.review-box input, 
+.review-box textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ECE7E1;
+  border-radius: 5px;
+  background-color: #1a1818;
+  color: #ECE7E1;
+}
+
+.review-box button {
+  padding: 10px 20px;
+  background-color: #1a1818;
+  color: #ECE7E1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.review-box button:hover {
+  background-color: #ddd;
+  color: #1a1818;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 1377px) {
+  body {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  .container-ab {
+    width: 10%;
+    height: 1px;
+    margin-top: 0;
+    padding: 2%;
+    position: relative;
+    top: 0;
+    transition: top 2s ease;
+  }
+
+  .loaded {
+    width: 100%;
+    height: 10px;
+  }
+
+  html {
+    width: 50%;
+    height: 10px;
+  }
+
+  body.loaded .container-ab {
+    top: 0;
+  }
+
+  .des {
+    width: 100%;
+    position: relative;
+    top: 300px;
+  }
+
+  .nav-list-ab {
+    margin: 10px 0;
+  }
+
+  .nav-line-ab {
+    width: 10px;
+    height: 10px;
+    background-color: #ECE7E1;
+    margin: 0 20px;
+  }
+
+  h1, p {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 35%;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    top: 20px;
+    font-size: 13px;
+  }
+
+  .des a {
+    font-style: normal;
+    text-decoration: underline;
+  }
+
+  .des a:hover {
+    text-decoration: line-through;
+  }
+
+  /* Responsive Review Box */
+  .review-box {
+    width: 50%;
+    padding: 13px;
+    left: -5%;
+  }
+
+  .review-box h2 {
+    font-size: 20px;
+  }
+
+  .review-box input, 
+  .review-box textarea {
+    width: calc(100% - 20px);
+  }
 }
