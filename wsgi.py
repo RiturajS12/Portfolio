@@ -1,3 +1,1 @@
-from index import app
-
 
