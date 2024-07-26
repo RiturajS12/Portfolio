@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-mongodb_uri = 'mongodb+srv://Textovert:Kyundu17@textovert.uzlevw3.mongodb.net/upflairs?retryWrites=true&w=majority'
+mongodb_uri = 'mongodb+srv://your_collectionname:your_pass@textovert.uzlevw3.mongodb.net/upflairs?retryWrites=true&w=majority'
 
 client = MongoClient(mongodb_uri, serverSelectionTimeoutMS=5000)
 db = client['upflairs']
