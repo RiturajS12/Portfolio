@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
-from pymongo import MongoClient
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-mongodb_uri = 'mongodb+srv://your_collectionname:your_pass@textovert.uzlevw3.mongodb.net/upflairs?retryWrites=true&w=majority'
+app.config['MYSQL_HOST'] = 'your_username_of_pythonanywhere.mysql.pythonanywhere-services.com'
+app.config['MYSQL_USER'] = 'your_username_of_pythonanywhere'
+app.config['MYSQL_PASSWORD'] = 'your_db_password'
+app.config['MYSQL_DB'] = 'your_username_of_pythonanywhere$default'
 
-client = MongoClient(mongodb_uri, serverSelectionTimeoutMS=5000)
-db = client['upflairs']
-collection = db['queries']
+mysql = MySQL(app)
 
 @app.route('/')
 def index():
@@ -34,9 +35,13 @@ def submit_review():
     name = request.form['name']
     message = request.form['message']
 
-    collection.insert_one({'name': name, 'message': message})
+    conn = mysql.connection
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO queries (name, message) VALUES (%s, %s)', (name, message))
+    conn.commit()
+    cursor.close()
 
     return redirect(url_for('contact'))
 
 if __name__ == '__main__':
-    app.run(port='5050',debug=True)
+    app.run(debug=True)
